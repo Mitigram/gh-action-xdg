@@ -1,0 +1,24 @@
+name: "XDG"
+description: |
+  This action will ensure that the directories from the XDG specification exists
+  and that corresponding environment variables point to the directories. In
+  addition, it will add the XDG directory for storing binaries to the PATH.
+author:  "Emmanuel Frécon <efrecon+github@gmail.com>"
+
+inputs:
+  home:
+    description: |
+      Path to a different HOME directory that the HOME directory. This directory
+      will be used as the base directories for most XDG directories. There is
+      little value in changing this directory, except when you want to simulate
+      a different HOME.
+    default: ""
+    required: false
+
+runs:
+  using: composite
+
+  steps:
+    - name: XDG setup
+      shell: bash
+      run: ${{ github.action_path }}/xdg.sh
