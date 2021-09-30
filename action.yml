@@ -4,6 +4,9 @@ description: |
   and that corresponding environment variables point to the directories. In
   addition, it will add the XDG directory for storing binaries to the PATH.
 author:  "Emmanuel Frécon <efrecon+github@gmail.com>"
+branding:
+  icon: settings
+  color: purple
 
 inputs:
   home:
